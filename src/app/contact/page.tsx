@@ -45,19 +45,27 @@ export default function ContactPage() {
       formDataToSend.append('Sujet', getSubjectText(formData.subject));
       formDataToSend.append('Message', formData.message);
       
+      console.log('Envoi du formulaire à FormSubmit...');
+      
       const res = await fetch('https://formsubmit.co/bekaformationhygiene@gmail.com', {
         method: 'POST',
         body: formDataToSend,
       });
       
+      console.log('Réponse FormSubmit:', res.status, res.statusText);
+      
       if (res.ok) {
+        console.log('Formulaire envoyé avec succès!');
         setIsSubmitted(true);
         setTimeout(() => setIsSubmitted(false), 3000);
       } else {
-        setError('Erreur lors de l\'envoi du message.');
+        const errorText = await res.text();
+        console.error('Erreur FormSubmit:', errorText);
+        setError(`Erreur lors de l'envoi du message. (${res.status})`);
       }
     } catch (err) {
-      setError('Erreur lors de l\'envoi du message.');
+      console.error('Erreur réseau:', err);
+      setError('Erreur de connexion. Vérifiez votre connexion internet.');
     }
   };
 
