@@ -4,10 +4,28 @@ import nodemailer from 'nodemailer';
 export async function POST(request: Request) {
   const data = await request.json();
 
-  // transporter SMTP (infos à mettre dans .env.local)
+  // Vérification des variables d'environnement
+  console.log('Variables SMTP:', {
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
+    user: process.env.SMTP_USER ? '***' : 'MANQUANT',
+    pass: process.env.SMTP_PASS ? '***' : 'MANQUANT',
+    secure: process.env.SMTP_SECURE,
+    to: process.env.CONTACT_TO_EMAIL
+  });
+
+  if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+    console.error('Variables d\'environnement SMTP manquantes');
+    return NextResponse.json({ 
+      success: false, 
+      error: 'Configuration SMTP manquante' 
+    }, { status: 500 });
+  }
+
+  // transporter SMTP
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT),
+    port: Number(process.env.SMTP_PORT) || 587,
     secure: process.env.SMTP_SECURE === 'true',
     auth: {
       user: process.env.SMTP_USER,
