@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CheckCircle, Shield, Users, Award, ArrowRight, Tablet, Printer, Smartphone } from "lucide-react";
+import { CheckCircle, Shield, Users, Award, ArrowRight, Tablet, Printer, Smartphone, Microscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -38,7 +38,7 @@ export default function HomePage() {
                   />
                   <div className="text-left">
                     <div className="font-bold text-green-800 text-lg">Organisme certifié Qualiopi</div>
-                    <div className="text-sm text-green-600 font-medium">Formations éligibles CPF</div>
+    
                   </div>
                 </div>
               </div>
@@ -57,26 +57,31 @@ export default function HomePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="relative bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl p-8 backdrop-blur-sm">
-                <div className="flex items-center justify-center space-x-4 mb-6">
-                  <Tablet className="h-12 w-12 text-primary" />
-                  <span className="text-2xl font-bold">+</span>
-                  <Printer className="h-12 w-12 text-primary" />
-                  <span className="text-2xl font-bold">+</span>
-                  <div className="relative">
-                    <Smartphone className="h-12 w-12 text-primary" />
-                    <div className="absolute -top-1 -right-1 bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
-                      H
+              <Link href="/solution-digitale" className="block">
+                <div className="relative bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl p-8 backdrop-blur-sm hover:shadow-xl transition-all duration-300 cursor-pointer group">
+                  <div className="flex items-center justify-center space-x-4 mb-6">
+                    <Tablet className="h-12 w-12 text-primary group-hover:scale-110 transition-transform" />
+                    <span className="text-2xl font-bold">+</span>
+                    <Printer className="h-12 w-12 text-primary group-hover:scale-110 transition-transform" />
+                    <span className="text-2xl font-bold">+</span>
+                    <div className="relative">
+                      <Smartphone className="h-12 w-12 text-primary group-hover:scale-110 transition-transform" />
+                      <div className="absolute -top-1 -right-1 bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
+                        H
+                      </div>
                     </div>
                   </div>
+                  <h3 className="text-xl font-semibold text-center mb-4 group-hover:text-primary transition-colors">
+                    Solution Clé en Main
+                  </h3>
+                  <p className="text-center text-muted-foreground">
+                    Tablette Dslide 114 + Imprimante Zebra + Application HACCP embarquée
+                  </p>
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <ArrowRight className="h-5 w-5 text-primary" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-center mb-4">
-                  Solution Clé en Main
-                </h3>
-                <p className="text-center text-muted-foreground">
-                  Tablette Dslide 114 + Imprimante Zebra + Application HACCP embarquée
-                </p>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -86,13 +91,18 @@ export default function HomePage() {
       <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20">
         <div className="container px-4 mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-              🚀 Nos Services Professionnels
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Une gamme complète de services pour assurer la conformité et l'excellence
-              de votre établissement alimentaire
-            </p>
+            <Link href="/services" className="block group">
+              <h2 className="text-3xl lg:text-4xl font-bold mb-4 group-hover:text-primary transition-colors cursor-pointer">
+                🚀 Nos Services Professionnels
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto group-hover:text-primary/80 transition-colors">
+                Une gamme complète de services pour assurer la conformité et l'excellence
+                de votre établissement alimentaire
+              </p>
+              <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ArrowRight className="h-6 w-6 text-primary mx-auto" />
+              </div>
+            </Link>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -110,6 +120,12 @@ export default function HomePage() {
                 color: "text-green-500"
               },
               {
+                icon: Microscope,
+                title: "🔬 Contrôle Microbiologique",
+                description: "Prélèvements de surface et analyses microbiologiques",
+                color: "text-red-500"
+              },
+              {
                 icon: Users,
                 title: "🤝 Accompagnement",
                 description: "Support personnalisé pour vos projets d'aménagement",
@@ -122,17 +138,22 @@ export default function HomePage() {
                 color: "text-orange-500"
               }
             ].map((service) => (
-              <Card key={service.title} className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                    <service.icon className={`h-8 w-8 ${service.color}`} />
-                  </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardContent>
-              </Card>
+              <Link key={service.title} href="/services" className="block">
+                <Card className="text-center hover:shadow-lg transition-all duration-300 cursor-pointer group">
+                  <CardHeader>
+                    <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <service.icon className={`h-8 w-8 ${service.color} group-hover:scale-110 transition-transform`} />
+                    </div>
+                    <CardTitle className="text-xl group-hover:text-primary transition-colors">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground group-hover:text-primary/80 transition-colors">{service.description}</p>
+                    <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <ArrowRight className="h-5 w-5 text-primary mx-auto" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>

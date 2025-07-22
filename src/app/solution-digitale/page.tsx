@@ -240,10 +240,10 @@ export default function SolutionDigitalePage() {
               <Badge variant="secondary" className="mb-4">
                 Solution Clé en Main
               </Badge>
-              <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold tracking-tight mb-6">
                 Solution <span className="text-primary">Digitale</span> Complète
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl">
+              <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl">
                 Tablette Android préconfigurée + Imprimante Zebra ZD421 + Application HACCP embarquée.
                 Tout ce dont vous avez besoin pour digitaliser vos contrôles HACCP.
               </p>
@@ -258,21 +258,21 @@ export default function SolutionDigitalePage() {
             </div>
 
             <div className="relative">
-              <div className="bg-background rounded-3xl p-8 shadow-2xl">
-                <div className="flex items-center justify-center space-x-6 mb-8">
-                  <div className="flex flex-col items-center gap-2">
-                    <Tablet className="h-16 w-16 text-primary" />
-                    <span className="text-sm font-medium">Tablette</span>
+              <div className="bg-background rounded-3xl p-4 sm:p-8 shadow-2xl">
+                <div className="flex items-center justify-center space-x-2 sm:space-x-4 lg:space-x-6 mb-8">
+                  <div className="flex flex-col items-center gap-1 sm:gap-2">
+                    <Tablet className="h-8 w-8 sm:h-12 sm:w-12 lg:h-16 lg:w-16 text-primary" />
+                    <span className="text-xs sm:text-sm font-medium text-center">Tablette</span>
                   </div>
-                  <div className="text-3xl font-bold text-primary">+</div>
-                  <div className="flex flex-col items-center gap-2">
-                    <Printer className="h-16 w-16 text-primary" />
-                    <span className="text-sm font-medium">Imprimante</span>
+                  <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-primary">+</div>
+                  <div className="flex flex-col items-center gap-1 sm:gap-2">
+                    <Printer className="h-8 w-8 sm:h-12 sm:w-12 lg:h-16 lg:w-16 text-primary" />
+                    <span className="text-xs sm:text-sm font-medium text-center">Imprimante</span>
                   </div>
-                  <div className="text-3xl font-bold text-primary">+</div>
-                  <div className="flex flex-col items-center gap-2">
-                    <Smartphone className="h-16 w-16 text-primary" />
-                    <span className="text-sm font-medium">Application</span>
+                  <div className="text-lg sm:text-2xl lg:text-3xl font-bold text-primary">+</div>
+                  <div className="flex flex-col items-center gap-1 sm:gap-2">
+                    <Smartphone className="h-8 w-8 sm:h-12 sm:w-12 lg:h-16 lg:w-16 text-primary" />
+                    <span className="text-xs sm:text-sm font-medium text-center">Application</span>
                   </div>
                 </div>
               </div>

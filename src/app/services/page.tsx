@@ -313,7 +313,7 @@ export default function ServicesPage() {
           <div className="text-center mt-12">
             <div className="inline-flex items-center gap-4 px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border border-gray-200 shadow-lg">
               <span className="text-2xl">🎯</span>
-              <span className="font-medium text-gray-700">Formations éligibles au financement CPF</span>
+              
             </div>
           </div>
         </div>
