@@ -47,7 +47,7 @@ export default function ContactPage() {
       
       console.log('Envoi du formulaire à FormSubmit...');
       
-      const res = await fetch('https://formsubmit.co/bekaformationhygiene@gmail.com', {
+      const res = await fetch('https://formsubmit.co/0c54e786422a1f1a68b5e5a6b50d175c', {
         method: 'POST',
         body: formDataToSend,
       });
