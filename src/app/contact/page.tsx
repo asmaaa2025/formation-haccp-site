@@ -35,17 +35,17 @@ export default function ContactPage() {
     e.preventDefault();
     setError(null);
     
-    // Créer un FormData avec toutes les informations
-    const formDataToSend = new FormData();
-    formDataToSend.append('name', formData.name);
-    formDataToSend.append('email', formData.email);
-    formDataToSend.append('phone', formData.phone);
-    formDataToSend.append('company', formData.company);
-    formDataToSend.append('subject', getSubjectText(formData.subject));
-    formDataToSend.append('message', formData.message);
-    
     try {
-      const res = await fetch('https://formspree.io/f/xldljnla', {
+      // Créer un FormData avec toutes les informations
+      const formDataToSend = new FormData();
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('company', formData.company);
+      formDataToSend.append('subject', getSubjectText(formData.subject));
+      formDataToSend.append('message', formData.message);
+      
+      const res = await fetch('https://formsubmit.co/gestion.beka@gmail.com', {
         method: 'POST',
         body: formDataToSend,
       });
@@ -131,8 +131,6 @@ export default function ContactPage() {
                     {error && (
                       <div className="text-red-600 text-center text-sm font-semibold">{error}</div>
                     )}
-                    {/* Champ caché pour le sujet */}
-                    <input type="hidden" name="subject" value={getSubjectText(formData.subject)} />
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label className="text-sm font-medium flex items-center gap-2">
