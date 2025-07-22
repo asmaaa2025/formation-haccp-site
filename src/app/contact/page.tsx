@@ -35,10 +35,16 @@ export default function ContactPage() {
     e.preventDefault();
     setError(null);
     try {
+      // Créer un message enrichi avec toutes les informations
+      const enrichedData = {
+        ...formData,
+        message: `Sujet: ${getSubjectText(formData.subject)}\n\n${formData.message}`
+      };
+      
       const res = await fetch('https://formspree.io/f/xldljnla', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(enrichedData),
       });
       const data = await res.json();
       if (data.ok) {
@@ -52,11 +58,27 @@ export default function ContactPage() {
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+  };
+
+  const getSubjectText = (value: string) => {
+    const subjects = {
+      'formation-haccp': '🎓 Formation HACCP',
+      'audit-conformite': '🔍 Audit de conformité',
+      'controles-microbiologiques': '🔬 Contrôles microbiologiques',
+      'pms': '📋 Plan de maîtrise sanitaire',
+      'agrement-sanitaire': '🏅 Aide à l\'obtention d\'agrément sanitaire',
+      'lutte-anti-nuisibles': '🐛 Lutte anti-nuisibles',
+      'conseil-architectural': '🏗️ Conseil architectural',
+      'accompagnement-controle': '🚨 Accompagnement contrôle services d\'hygiène',
+      'solution-digitale': '📱 Solution digitale HACCP',
+      'autre': '💬 Autre demande'
+    };
+    return subjects[value as keyof typeof subjects] || value;
   };
 
   return (
@@ -172,7 +194,7 @@ export default function ContactPage() {
                       <select
                         name="subject"
                         value={formData.subject}
-                        onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                        onChange={handleChange}
                         className="w-full p-3 border rounded-md"
                         required
                       >
