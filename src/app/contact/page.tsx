@@ -40,6 +40,9 @@ export default function ContactPage() {
     if (isSubmitting) return;
     setIsSubmitting(true);
     
+    // Add a small delay to prevent rate limiting
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
     try {
       // Créer un FormData avec toutes les informations
       const formDataToSend = new FormData();
@@ -52,7 +55,7 @@ export default function ContactPage() {
       
       console.log('Envoi du formulaire à FormSubmit...');
       
-      const res = await fetch('https://formsubmit.co/0c54e786422a1f1a68b5e5a6b50d175c', {
+      const res = await fetch('https://formsubmit.co/bekaformationhygiene@gmail.com', {
         method: 'POST',
         body: formDataToSend,
       });
