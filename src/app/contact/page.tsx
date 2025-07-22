@@ -30,10 +30,15 @@ export default function ContactPage() {
 
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+    
+    // Prevent multiple submissions
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     
     try {
       // Créer un FormData avec toutes les informations
@@ -57,16 +62,27 @@ export default function ContactPage() {
       if (res.ok) {
         console.log('Formulaire envoyé avec succès!');
         setIsSubmitted(true);
-        setTimeout(() => setIsSubmitted(false), 3000);
+        // Reset form data after successful submission
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          subject: "",
+          message: ""
+        });
+        setTimeout(() => setIsSubmitted(false), 5000);
       } else {
         const errorText = await res.text();
         console.error('Erreur FormSubmit:', errorText);
         setError(`Erreur lors de l'envoi du message. (${res.status})`);
       }
-    } catch (err) {
-      console.error('Erreur réseau:', err);
-      setError('Erreur de connexion. Vérifiez votre connexion internet.');
-    }
+          } catch (err) {
+        console.error('Erreur réseau:', err);
+        setError('Erreur de connexion. Vérifiez votre connexion internet.');
+      } finally {
+        setIsSubmitting(false);
+      }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -237,9 +253,14 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full">
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      className="w-full"
+                      disabled={isSubmitting}
+                    >
                       <Send className="mr-2 h-4 w-4" />
-                      Envoyer ma demande
+                      {isSubmitting ? 'Envoi en cours...' : 'Envoyer ma demande'}
                     </Button>
                   </form>
                 )}
