@@ -39,7 +39,7 @@ npm run build
 
 Le site est automatiquement déployé sur GitHub Pages via GitHub Actions.
 
-**URL du site :** `https://[votre-username].github.io/[nom-du-repo]`
+**URL du site :** `https://bekaformation.com`
 
 ## 📞 Contact
 
