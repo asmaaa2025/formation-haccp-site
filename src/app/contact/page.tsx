@@ -35,17 +35,17 @@ export default function ContactPage() {
     e.preventDefault();
     setError(null);
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://formspree.io/f/xaybzwkd', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      if (data.success) {
+      if (data.ok) {
         setIsSubmitted(true);
         setTimeout(() => setIsSubmitted(false), 3000);
       } else {
-        setError(data.error || 'Erreur lors de l\'envoi du message.');
+        setError('Erreur lors de l\'envoi du message.');
       }
     } catch (err) {
       setError('Erreur lors de l\'envoi du message.');
