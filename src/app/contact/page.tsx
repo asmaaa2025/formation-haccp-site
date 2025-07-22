@@ -34,20 +34,23 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+    
+    // Créer un FormData avec toutes les informations
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('phone', formData.phone);
+    formDataToSend.append('company', formData.company);
+    formDataToSend.append('subject', getSubjectText(formData.subject));
+    formDataToSend.append('message', formData.message);
+    
     try {
-      // Créer un message enrichi avec toutes les informations
-      const enrichedData = {
-        ...formData,
-        message: `Sujet: ${getSubjectText(formData.subject)}\n\n${formData.message}`
-      };
-      
       const res = await fetch('https://formspree.io/f/xldljnla', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(enrichedData),
+        body: formDataToSend,
       });
-      const data = await res.json();
-      if (data.ok) {
+      
+      if (res.ok) {
         setIsSubmitted(true);
         setTimeout(() => setIsSubmitted(false), 3000);
       } else {
@@ -128,6 +131,8 @@ export default function ContactPage() {
                     {error && (
                       <div className="text-red-600 text-center text-sm font-semibold">{error}</div>
                     )}
+                    {/* Champ caché pour le sujet */}
+                    <input type="hidden" name="subject" value={getSubjectText(formData.subject)} />
                     <div className="grid md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label className="text-sm font-medium flex items-center gap-2">
