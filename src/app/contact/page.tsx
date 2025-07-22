@@ -45,7 +45,7 @@ export default function ContactPage() {
       formDataToSend.append('subject', getSubjectText(formData.subject));
       formDataToSend.append('message', formData.message);
       
-      const res = await fetch('https://formsubmit.co/gestion.beka@gmail.com', {
+      const res = await fetch('https://formsubmit.co/bekaformationhygiene@gmail.com', {
         method: 'POST',
         body: formDataToSend,
       });
