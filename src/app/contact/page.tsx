@@ -38,12 +38,12 @@ export default function ContactPage() {
     try {
       // Créer un FormData avec toutes les informations
       const formDataToSend = new FormData();
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('phone', formData.phone);
-      formDataToSend.append('company', formData.company);
-      formDataToSend.append('subject', getSubjectText(formData.subject));
-      formDataToSend.append('message', formData.message);
+      formDataToSend.append('Nom', formData.name);
+      formDataToSend.append('Email', formData.email);
+      formDataToSend.append('Téléphone', formData.phone);
+      formDataToSend.append('Entreprise', formData.company);
+      formDataToSend.append('Sujet', getSubjectText(formData.subject));
+      formDataToSend.append('Message', formData.message);
       
       const res = await fetch('https://formsubmit.co/bekaformationhygiene@gmail.com', {
         method: 'POST',
