@@ -1,116 +1,19 @@
 "use client";
 
-import { useState } from "react";
 import {
   Phone,
   Mail,
   MapPin,
   Clock,
-  Send,
-  CheckCircle,
   User,
   Building,
-  MessageSquare
+  MessageSquare,
+  CheckCircle
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    subject: "",
-    message: ""
-  });
-
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError(null);
-    
-    // Prevent multiple submissions
-    if (isSubmitting) return;
-    setIsSubmitting(true);
-    
-    // Add a small delay to prevent rate limiting
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    try {
-      // Créer un FormData avec toutes les informations
-      const formDataToSend = new FormData();
-      formDataToSend.append('Nom', formData.name);
-      formDataToSend.append('Email', formData.email);
-      formDataToSend.append('Téléphone', formData.phone);
-      formDataToSend.append('Entreprise', formData.company);
-      formDataToSend.append('Sujet', getSubjectText(formData.subject));
-      formDataToSend.append('Message', formData.message);
-      
-      console.log('Envoi du formulaire à FormSubmit...');
-      
-      const res = await fetch('https://formsubmit.co/bekaformationhygiene@gmail.com', {
-        method: 'POST',
-        body: formDataToSend,
-      });
-      
-      console.log('Réponse FormSubmit:', res.status, res.statusText);
-      
-      if (res.ok) {
-        console.log('Formulaire envoyé avec succès!');
-        setIsSubmitted(true);
-        // Reset form data after successful submission
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          company: "",
-          subject: "",
-          message: ""
-        });
-        setTimeout(() => setIsSubmitted(false), 5000);
-      } else {
-        const errorText = await res.text();
-        console.error('Erreur FormSubmit:', errorText);
-        setError(`Erreur lors de l'envoi du message. (${res.status})`);
-      }
-          } catch (err) {
-        console.error('Erreur réseau:', err);
-        setError('Erreur de connexion. Vérifiez votre connexion internet.');
-      } finally {
-        setIsSubmitting(false);
-      }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const getSubjectText = (value: string) => {
-    const subjects = {
-      'formation-haccp': '🎓 Formation HACCP',
-      'audit-conformite': '🔍 Audit de conformité',
-      'controles-microbiologiques': '🔬 Contrôles microbiologiques',
-      'pms': '📋 Plan de maîtrise sanitaire',
-      'agrement-sanitaire': '🏅 Aide à l\'obtention d\'agrément sanitaire',
-      'lutte-anti-nuisibles': '🐛 Lutte anti-nuisibles',
-      'conseil-architectural': '🏗️ Conseil architectural',
-      'accompagnement-controle': '🚨 Accompagnement contrôle services d\'hygiène',
-      'solution-digitale': '📱 Solution digitale HACCP',
-      'autre': '💬 Autre demande'
-    };
-    return subjects[value as keyof typeof subjects] || value;
-  };
-
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
@@ -130,151 +33,15 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Form & Info */}
+      {/* Contact Information */}
       <section className="py-20">
         <div className="container px-4 mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <Card className="h-fit">
-              <CardHeader>
-                <CardTitle className="text-2xl flex items-center gap-2">
-                  📝 Demande de Contact
-                </CardTitle>
-                <p className="text-muted-foreground">
-                  Remplissez ce formulaire et nous vous recontactons sous 24h
-                </p>
-              </CardHeader>
-              <CardContent>
-                {isSubmitted ? (
-                  <div className="text-center py-8">
-                    <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">Merci ! 🎉</h3>
-                    <p className="text-muted-foreground">
-                      Votre message a été envoyé. Nous vous recontacterons rapidement.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    {error && (
-                      <div className="text-red-600 text-center text-sm font-semibold">{error}</div>
-                    )}
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium flex items-center gap-2">
-                          <User className="h-4 w-4 text-blue-500" />
-                          Nom et Prénom *
-                        </label>
-                        <Input
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          placeholder="Votre nom complet"
-                          required
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium flex items-center gap-2">
-                          <Mail className="h-4 w-4 text-green-500" />
-                          Email *
-                        </label>
-                        <Input
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          placeholder="votre@email.com"
-                          required
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium flex items-center gap-2">
-                          <Phone className="h-4 w-4 text-purple-500" />
-                          Téléphone
-                        </label>
-                        <Input
-                          name="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          placeholder="01 23 45 67 89"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label className="text-sm font-medium flex items-center gap-2">
-                          <Building className="h-4 w-4 text-orange-500" />
-                          Entreprise
-                        </label>
-                        <Input
-                          name="company"
-                          value={formData.company}
-                          onChange={handleChange}
-                          placeholder="Nom de votre entreprise"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium flex items-center gap-2">
-                        <MessageSquare className="h-4 w-4 text-cyan-500" />
-                        Sujet de votre demande *
-                      </label>
-                      <select
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        className="w-full p-3 border rounded-md"
-                        required
-                      >
-                        <option value="">Sélectionnez un sujet</option>
-                        <option value="formation-haccp">🎓 Formation HACCP</option>
-                        <option value="audit-conformite">🔍 Audit de conformité</option>
-                        <option value="controles-microbiologiques">🔬 Contrôles microbiologiques</option>
-                        <option value="pms">📋 Plan de maîtrise sanitaire</option>
-                        <option value="agrement-sanitaire">🏅 Aide à l'obtention d'agrément sanitaire</option>
-                                        <option value="lutte-anti-nuisibles">🐛 Lutte anti-nuisibles</option>
-                <option value="conseil-architectural">🏗️ Conseil architectural</option>
-                <option value="accompagnement-controle">🚨 Accompagnement contrôle services d'hygiène</option>
-                <option value="solution-digitale">📱 Solution digitale HACCP</option>
-                <option value="autre">💬 Autre demande</option>
-                      </select>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium">
-                        Message *
-                      </label>
-                      <Textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="Décrivez votre projet ou votre besoin..."
-                        rows={5}
-                        required
-                      />
-                    </div>
-
-                    <Button 
-                      type="submit" 
-                      size="lg" 
-                      className="w-full"
-                      disabled={isSubmitting}
-                    >
-                      <Send className="mr-2 h-4 w-4" />
-                      {isSubmitting ? 'Envoi en cours...' : 'Envoyer ma demande'}
-                    </Button>
-                  </form>
-                )}
-              </CardContent>
-            </Card>
-
             {/* Contact Information */}
             <div className="space-y-6">
-              <Card className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20">
+              <Card className="bg-gradient-to-br from-blue-50 to-purple-50">
                 <CardHeader>
-                  <CardTitle className="text-xl flex items-center gap-2">
+                  <CardTitle className="text-2xl flex items-center gap-2">
                     📍 Nos Coordonnées
                   </CardTitle>
                 </CardHeader>
@@ -284,8 +51,9 @@ export default function ContactPage() {
                       <Phone className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="font-semibold">📞 Téléphone</h3>
-                      <p className="text-muted-foreground">0695178110</p>
+                      <h3 className="font-semibold text-lg">📞 Téléphone</h3>
+                      <p className="text-muted-foreground text-lg">0695178110</p>
+                      <p className="text-sm text-muted-foreground">Appelez-nous directement pour un échange rapide</p>
                     </div>
                   </div>
 
@@ -294,20 +62,32 @@ export default function ContactPage() {
                       <Mail className="h-6 w-6" />
                     </div>
                     <div>
-                      <h3 className="font-semibold">📧 Email</h3>
-                      <p className="text-muted-foreground">gestion.beka@gmail.com</p>
+                      <h3 className="font-semibold text-lg">📧 Email</h3>
+                      <p className="text-muted-foreground text-lg">gestion.beka@gmail.com</p>
+                      <p className="text-sm text-muted-foreground">Envoyez-nous un email pour plus de détails</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-purple-500 text-white rounded-lg">
+                      <Clock className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg">🕒 Horaires de contact</h3>
+                      <p className="text-muted-foreground">Lundi - Vendredi : 9h00 - 18h00</p>
+                      <p className="text-sm text-muted-foreground">Nous répondons également en dehors de ces horaires</p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
               {/* Guarantees */}
-              <Card className="bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20">
+              <Card className="bg-gradient-to-br from-green-50 to-blue-50">
                 <CardContent className="pt-6">
-                  <h3 className="font-semibold mb-4 flex items-center gap-2">
+                  <h3 className="font-semibold mb-4 flex items-center gap-2 text-lg">
                     ✅ Nos Engagements
                   </h3>
-                  <ul className="space-y-2 text-sm">
+                  <ul className="space-y-3 text-sm">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="h-4 w-4 text-green-500" />
                       <span>Réponse garantie sous 24h</span>
@@ -324,7 +104,79 @@ export default function ContactPage() {
                       <CheckCircle className="h-4 w-4 text-green-500" />
                       <span>Satisfaction client garantie</span>
                     </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span>Accompagnement personnalisé</span>
+                    </li>
                   </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Services Overview */}
+            <div className="space-y-6">
+              <Card className="bg-gradient-to-br from-orange-50 to-red-50">
+                <CardHeader>
+                  <CardTitle className="text-xl flex items-center gap-2">
+                    🎯 Nos Services
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span>🎓 Formation HACCP</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span>🔍 Audit de conformité</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span>🔬 Contrôles microbiologiques</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span>📋 Plan de maîtrise sanitaire</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span>🏅 Aide à l'obtention d'agrément sanitaire</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span>🐛 Lutte anti-nuisibles</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span>🏗️ Conseil architectural</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span>🚨 Accompagnement contrôle services d'hygiène</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span>📱 Solution digitale HACCP</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Call to Action */}
+              <Card className="bg-gradient-to-br from-blue-600 to-purple-600 text-white">
+                <CardContent className="pt-6 text-center">
+                  <h3 className="font-semibold mb-4 text-xl">
+                    🚀 Prêt à commencer ?
+                  </h3>
+                  <p className="mb-4">
+                    Contactez-nous dès maintenant pour un accompagnement personnalisé
+                    et un devis gratuit adapté à vos besoins.
+                  </p>
+                  <div className="space-y-2">
+                    <p className="font-semibold">📞 0695178110</p>
+                    <p className="font-semibold">📧 gestion.beka@gmail.com</p>
+                  </div>
                 </CardContent>
               </Card>
             </div>

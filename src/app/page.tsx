@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CheckCircle, Shield, Users, Award, ArrowRight, Tablet, Printer, Smartphone, Microscope } from "lucide-react";
+import { CheckCircle, Shield, Users, Award, ArrowRight, Microscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -49,40 +49,9 @@ export default function HomePage() {
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link href="/solution-digitale">
-                    Découvrir la solution digitale
-                  </Link>
-                </Button>
               </div>
             </div>
-            <div className="relative">
-              <Link href="/solution-digitale" className="block">
-                <div className="relative bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl p-8 backdrop-blur-sm hover:shadow-xl transition-all duration-300 cursor-pointer group">
-                  <div className="flex items-center justify-center space-x-4 mb-6">
-                    <Tablet className="h-12 w-12 text-primary group-hover:scale-110 transition-transform" />
-                    <span className="text-2xl font-bold">+</span>
-                    <Printer className="h-12 w-12 text-primary group-hover:scale-110 transition-transform" />
-                    <span className="text-2xl font-bold">+</span>
-                    <div className="relative">
-                      <Smartphone className="h-12 w-12 text-primary group-hover:scale-110 transition-transform" />
-                      <div className="absolute -top-1 -right-1 bg-green-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">
-                        H
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold text-center mb-4 group-hover:text-primary transition-colors">
-                    Solution Clé en Main
-                  </h3>
-                  <p className="text-center text-muted-foreground">
-                    Tablette Dslide 114 + Imprimante Zebra + Application HACCP embarquée
-                  </p>
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <ArrowRight className="h-5 w-5 text-primary" />
-                  </div>
-                </div>
-              </Link>
-            </div>
+
           </div>
         </div>
       </section>
