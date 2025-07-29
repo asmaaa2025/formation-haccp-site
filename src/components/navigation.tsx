@@ -21,13 +21,25 @@ export function Navigation() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white backdrop-blur supports-[backdrop-filter]:bg-white">
       <div className="container flex flex-nowrap h-16 items-center justify-between">
-        <div className="flex items-center gap-2 -mt-2 -ml-2 md:-ml-6 h-16">
-          <Image src="/logo.svg" alt="Logo Formation HACCP" width={56} height={56} className="my-0" />
-          <span className="font-bold whitespace-nowrap text-base md:text-xl mt-4">Conseil & Formation</span>
-        </div>
+        <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+          <div className="flex items-center gap-3">
+            <Image 
+              src="/logo.svg" 
+              alt="BEKA Formation HACCP - Logo" 
+              width={48} 
+              height={48} 
+              className="object-contain"
+              priority
+            />
+            <div className="flex flex-col">
+              <span className="font-bold text-lg leading-tight">BEKA Formation</span>
+              <span className="text-sm text-muted-foreground leading-tight">HACCP & Hygiène</span>
+            </div>
+          </div>
+        </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 ml-8">
+        <nav className="hidden md:flex items-center gap-6">
           {navigationItems.map((item) => (
             <Link
               key={item.name}
