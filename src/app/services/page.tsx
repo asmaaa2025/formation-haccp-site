@@ -18,6 +18,19 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Services HACCP - Formations, Audits, Contrôles Microbiologiques | BEKA Formation",
+  description: "Formations HACCP certifiées Qualiopi, audits de conformité, contrôles microbiologiques, PMS, agrément sanitaire, lutte anti-nuisibles. Expert en hygiène alimentaire.",
+  keywords: "formation HACCP, audit conformité, contrôle microbiologique, PMS, agrément sanitaire, lutte anti-nuisibles, conseil architectural, accompagnement contrôle services d'hygiène, solution digitale HACCP",
+  openGraph: {
+    title: "Services HACCP - Formations, Audits, Contrôles Microbiologiques",
+    description: "Formations HACCP certifiées Qualiopi, audits de conformité, contrôles microbiologiques, PMS, agrément sanitaire, lutte anti-nuisibles. Expert en hygiène alimentaire.",
+    url: "https://bekaformation.fr/services",
+    type: "website",
+  },
+};
 
 const services = [
   {

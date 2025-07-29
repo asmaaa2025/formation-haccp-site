@@ -4,12 +4,25 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "BEKA Formation HACCP - Expert en Hygiène et Sécurité Alimentaire | 15 ans d'expérience",
+  description: "Formations HACCP certifiées Qualiopi, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans. Devis gratuit et accompagnement personnalisé.",
+  keywords: "formation HACCP, hygiène alimentaire, sécurité alimentaire, audit conformité, PMS, agrément sanitaire, DUERP, contrôle microbiologique, lutte anti-nuisibles, conseil architectural, formation continue, certification Qualiopi",
+  openGraph: {
+    title: "BEKA Formation HACCP - Expert en Hygiène et Sécurité Alimentaire",
+    description: "Formations HACCP certifiées Qualiopi, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans. Devis gratuit.",
+    url: "https://bekaformation.fr",
+    type: "website",
+  },
+};
 
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900 dark:via-blue-800 dark:to-purple-900 dark:text-white">
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900 dark:via-blue-800 dark:to-purple-900 dark:text-white" role="banner" aria-label="Section principale">
         <div className="container px-4 mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
@@ -31,7 +44,7 @@ export default function HomePage() {
                 <div className="flex items-center gap-4 px-6 py-4 bg-green-50 border-2 border-green-200 rounded-xl shadow-lg">
                   <Image 
                     src="/logo_qualiopi.png" 
-                    alt="Logo Qualiopi" 
+                    alt="Logo Qualiopi - Certification formation professionnelle" 
                     width={96} 
                     height={96} 
                     className="object-contain"
@@ -57,7 +70,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Overview */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20">
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20" role="main" aria-label="Nos services">
         <div className="container px-4 mx-auto">
           <div className="text-center mb-16">
             <Link href="/services" className="block group">
