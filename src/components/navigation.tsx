@@ -26,8 +26,8 @@ export function Navigation() {
             <Image 
               src="/nouveau_logo.jpeg" 
               alt="BEKA Formation HACCP - Logo" 
-              width={48} 
-              height={48} 
+              width={64} 
+              height={64} 
               className="object-contain"
               priority
             />
