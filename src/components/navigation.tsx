@@ -24,7 +24,7 @@ export function Navigation() {
         <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
           <div className="flex items-center gap-3">
             <Image 
-              src="/logo.svg" 
+              src="/nouveau_logo.jpeg" 
               alt="BEKA Formation HACCP - Logo" 
               width={48} 
               height={48} 

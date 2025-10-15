@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   icons: {
-    icon: '/logo.svg',
-    shortcut: '/logo.svg',
-    apple: '/logo.svg',
+    icon: '/nouveau_logo.jpeg',
+    shortcut: '/nouveau_logo.jpeg',
+    apple: '/nouveau_logo.jpeg',
   },
   openGraph: {
     type: 'website',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: 'Formations HACCP certifiées Qualiopi, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans. Devis gratuit.',
     images: [
       {
-        url: '/logo.svg',
+        url: '/nouveau_logo.jpeg',
         width: 1200,
         height: 630,
         alt: 'BEKA Formation HACCP - Expert en Hygiène Alimentaire',
@@ -90,7 +90,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "BEKA Formation HACCP",
               "url": "https://bekaformation.fr",
-              "logo": "https://bekaformation.fr/logo.svg",
+              "logo": "https://bekaformation.fr/nouveau_logo.jpeg",
               "description": "Expert en hygiène et sécurité alimentaire depuis 15 ans. Formations HACCP, audits de conformité, contrôles microbiologiques.",
               "address": {
                 "@type": "PostalAddress",

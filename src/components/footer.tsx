@@ -11,7 +11,7 @@ export function Footer() {
           {/* Branding */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Image src="/logo.svg" alt="Logo BEKA Formation" width={48} height={48} />
+              <Image src="/nouveau_logo.jpeg" alt="Logo BEKA Formation" width={48} height={48} />
               <span className="text-lg font-bold whitespace-nowrap">Conseil & Formation</span>
             </div>
             <p className="text-sm text-muted-foreground">
