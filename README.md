@@ -4,7 +4,7 @@ Site web professionnel pour **Conseil & Formation**, spécialiste en hygiène et
 
 ## 🎯 Services Proposés
 
-- **Formations HACCP** (certifiées Qualiopi)
+- **Formations HACCP**
 - **Audits de conformité**
 - **Contrôles microbiologiques**
 - **Plans de maîtrise sanitaire**
@@ -48,7 +48,6 @@ Le site est automatiquement déployé sur GitHub Pages via GitHub Actions.
 
 ## 🏅 Certifications
 
-- **Qualiopi** - Organisme certifié
 - **ROFHYA** - N° d'enregistrement DRAAF
 - **Conformité** - Arrêté du 8 février 2024
 

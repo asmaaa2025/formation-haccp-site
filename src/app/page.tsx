@@ -8,11 +8,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "BEKA Formation HACCP - Expert en Hygiène et Sécurité Alimentaire | 15 ans d'expérience",
-  description: "Formations HACCP certifiées Qualiopi, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans. Devis gratuit et accompagnement personnalisé.",
-  keywords: "formation HACCP, hygiène alimentaire, sécurité alimentaire, audit conformité, PMS, agrément sanitaire, DUERP, contrôle microbiologique, lutte anti-nuisibles, conseil architectural, formation continue, certification Qualiopi",
+  description: "Formations HACCP, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans. Devis gratuit et accompagnement personnalisé.",
+  keywords: "formation HACCP, hygiène alimentaire, sécurité alimentaire, audit conformité, PMS, agrément sanitaire, DUERP, contrôle microbiologique, lutte anti-nuisibles, conseil architectural, formation continue",
   openGraph: {
     title: "BEKA Formation HACCP - Expert en Hygiène et Sécurité Alimentaire",
-    description: "Formations HACCP certifiées Qualiopi, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans. Devis gratuit.",
+    description: "Formations HACCP, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans. Devis gratuit.",
     url: "https://bekaformation.fr",
     type: "website",
   },
@@ -31,10 +31,6 @@ export default function HomePage() {
                   <Star className="h-3 w-3 mr-1" />
                   15 ans d'expérience
                 </Badge>
-                <Badge variant="secondary" className="bg-green-500/20 text-green-200 border-green-300/30">
-                  <TrendingUp className="h-3 w-3 mr-1" />
-                  Certifié Qualiopi
-                </Badge>
               </div>
               
               <h1 className="text-4xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
@@ -46,26 +42,9 @@ export default function HomePage() {
               </h1>
               
               <p className="text-xl text-blue-100 mb-8 max-w-2xl leading-relaxed">
-                Formations HACCP certifiées, audits de conformité et accompagnement personnalisé.
+                Formations HACCP, audits de conformité et accompagnement personnalisé.
                 Votre partenaire de confiance pour la mise en conformité de votre établissement.
               </p>
-              
-              {/* Certification Qualiopi */}
-              <div className="flex items-center justify-center lg:justify-start gap-3 mb-8">
-                <div className="flex items-center gap-4 px-6 py-4 bg-white/10 border border-white/20 rounded-2xl shadow-2xl hover:bg-white/20 transition-all duration-300">
-                  <Image 
-                    src="/logo_qualiopi.png" 
-                    alt="Logo Qualiopi - Certification formation professionnelle" 
-                    width={80} 
-                    height={80} 
-                    className="object-contain"
-                  />
-                  <div className="text-left">
-                    <div className="font-bold text-white text-lg">Organisme certifié Qualiopi</div>
-                    <div className="text-blue-200 text-sm">Formation professionnelle reconnue</div>
-                  </div>
-                </div>
-              </div>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" asChild>

@@ -12,8 +12,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "BEKA Formation HACCP - Expert en Hygiène et Sécurité Alimentaire | 15 ans d'expérience",
-  description: "Formations HACCP certifiées Qualiopi, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans. Devis gratuit et accompagnement personnalisé.",
-  keywords: "formation HACCP, hygiène alimentaire, sécurité alimentaire, audit conformité, PMS, agrément sanitaire, DUERP, contrôle microbiologique, lutte anti-nuisibles, conseil architectural, formation continue, certification Qualiopi",
+  description: "Formations HACCP, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans. Devis gratuit et accompagnement personnalisé.",
+  keywords: "formation HACCP, hygiène alimentaire, sécurité alimentaire, audit conformité, PMS, agrément sanitaire, DUERP, contrôle microbiologique, lutte anti-nuisibles, conseil architectural, formation continue",
   authors: [{ name: "BEKA Formation" }],
   creator: "BEKA Formation",
   publisher: "BEKA Formation",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     url: 'https://bekaformation.fr',
     siteName: 'BEKA Formation HACCP',
     title: 'BEKA Formation HACCP - Expert en Hygiène et Sécurité Alimentaire',
-    description: 'Formations HACCP certifiées Qualiopi, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans. Devis gratuit.',
+    description: 'Formations HACCP, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans. Devis gratuit.',
     images: [
       {
         url: '/nouveau_logo.jpeg',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'BEKA Formation HACCP - Expert en Hygiène et Sécurité Alimentaire',
-    description: 'Formations HACCP certifiées Qualiopi, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans.',
+    description: 'Formations HACCP, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans.',
     images: ['/logo.svg'],
   },
   robots: {

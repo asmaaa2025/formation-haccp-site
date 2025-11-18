@@ -505,12 +505,6 @@ export default function SolutionDigitalePage() {
                   <div className="text-xl opacity-90">Clé en Main</div>
                 </div>
               </div>
-              <div className="text-center">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full">
-                  <Award className="h-4 w-4 text-primary" />
-                  <span className="text-sm font-medium">Service certifié Qualiopi</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>

@@ -22,11 +22,11 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Services HACCP - Formations, Audits, Contrôles Microbiologiques | BEKA Formation",
-  description: "Formations HACCP certifiées Qualiopi, audits de conformité, contrôles microbiologiques, PMS, agrément sanitaire, lutte anti-nuisibles. Expert en hygiène alimentaire.",
+  description: "Formations HACCP, audits de conformité, contrôles microbiologiques, PMS, agrément sanitaire, lutte anti-nuisibles. Expert en hygiène alimentaire.",
   keywords: "formation HACCP, audit conformité, contrôle microbiologique, PMS, agrément sanitaire, lutte anti-nuisibles, conseil architectural, accompagnement contrôle services d'hygiène, solution digitale HACCP",
   openGraph: {
     title: "Services HACCP - Formations, Audits, Contrôles Microbiologiques",
-    description: "Formations HACCP certifiées Qualiopi, audits de conformité, contrôles microbiologiques, PMS, agrément sanitaire, lutte anti-nuisibles. Expert en hygiène alimentaire.",
+    description: "Formations HACCP, audits de conformité, contrôles microbiologiques, PMS, agrément sanitaire, lutte anti-nuisibles. Expert en hygiène alimentaire.",
     url: "https://bekaformation.fr/services",
     type: "website",
   },
@@ -288,22 +288,7 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-green-200 text-center">
-                                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Image 
-                      src="/logo_qualiopi.png" 
-                      alt="Logo Qualiopi" 
-                      width={48} 
-                      height={48} 
-                      className="object-contain"
-                    />
-                  </div>
-              <h3 className="text-xl font-bold text-green-800 mb-3">Certification Qualiopi</h3>
-              <p className="text-gray-600 mb-4">Organisme certifié pour la qualité de nos formations professionnelles</p>
-              <div className="text-sm text-green-600 font-medium">✓ Certification en cours</div>
-            </div>
-
+          <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-blue-200 text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-3xl">📋</span>
@@ -355,8 +340,8 @@ export default function ServicesPage() {
               },
               {
                 icon: Award,
-                title: "Certification Qualité",
-                description: "Organisme certifié Qualiopi pour la qualité de nos formations professionnelles."
+                title: "Qualité Professionnelle",
+                description: "Formations de qualité adaptées à votre secteur d'activité et vos besoins spécifiques."
               }
             ].map((reason) => (
               <div key={reason.title} className="text-center">
