@@ -10,9 +10,20 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Branding */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Image src="/nouveau_logo.jpeg" alt="Logo BEKA Formation" width={80} height={80} />
-              <span className="text-lg font-bold whitespace-nowrap">Conseil & Formation</span>
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-2">
+                <Image src="/nouveau_logo.jpeg" alt="Logo BEKA Formation" width={80} height={80} />
+                <span className="text-lg font-bold whitespace-nowrap">Conseil & Formation</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <Image
+                  src="/logo_qualiopi.png"
+                  alt="Certification Qualiopi - République Française"
+                  width={140}
+                  height={80}
+                  className="h-auto w-auto"
+                />
+              </div>
             </div>
             <p className="text-sm text-muted-foreground">
               Expert en hygiène et sécurité alimentaire depuis 15 ans.

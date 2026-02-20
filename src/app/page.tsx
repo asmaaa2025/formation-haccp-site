@@ -41,11 +41,22 @@ export default function HomePage() {
                 Alimentaire
               </h1>
               
-              <p className="text-xl text-blue-100 mb-8 max-w-2xl leading-relaxed">
+              <p className="text-xl text-blue-100 mb-6 max-w-2xl leading-relaxed">
                 Formations HACCP, audits de conformité et accompagnement personnalisé.
                 Votre partenaire de confiance pour la mise en conformité de votre établissement.
               </p>
-              
+
+              <div className="mb-8 flex justify-center lg:justify-start">
+                <Image
+                  src="/logo_qualiopi.png"
+                  alt="Certification Qualiopi - République Française"
+                  width={220}
+                  height={120}
+                  className="h-auto w-auto max-w-xs"
+                  priority
+                />
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Button size="lg" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105" asChild>
                   <Link href="/contact">
