@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CheckCircle, Shield, Users, ArrowRight, Microscope, Star, TrendingUp } from "lucide-react";
+import { CheckCircle, Shield, Users, ArrowRight, Microscope, Star, TrendingUp, Flame } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -117,7 +117,7 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
               {
                 icon: Shield,
@@ -146,6 +146,13 @@ export default function HomePage() {
                 description: "Support personnalisé pour vos projets d'aménagement",
                 color: "text-purple-500",
                 bgColor: "bg-purple-50"
+              },
+              {
+                icon: Flame,
+                title: "🔥 Formation Extincteur",
+                description: "Formation pratique à la manipulation des extincteurs",
+                color: "text-orange-500",
+                bgColor: "bg-orange-50"
               }
             ].map((service) => (
               <Link key={service.title} href="/services" className="block">

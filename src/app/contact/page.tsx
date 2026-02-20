@@ -195,6 +195,10 @@ export default function ContactPage() {
                       <CheckCircle className="h-4 w-4 text-green-500" />
                       <span>📱 Solution digitale HACCP</span>
                     </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span>🔥 Formation à l'utilisation d'extincteur</span>
+                    </div>
                   </div>
                 </CardContent>
               </Card>

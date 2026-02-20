@@ -30,6 +30,7 @@ export function Footer() {
               <li><Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">Plans de maîtrise sanitaire</Link></li>
               <li><Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">Agrément sanitaire</Link></li>
               <li><Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">Accompagnement contrôle</Link></li>
+              <li><Link href="/services" className="text-muted-foreground hover:text-primary transition-colors">Formation extincteur</Link></li>
             </ul>
           </div>
 

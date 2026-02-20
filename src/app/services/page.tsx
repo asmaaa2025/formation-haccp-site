@@ -11,7 +11,8 @@ import {
   Clock,
   MapPin,
   BookOpen,
-  Bug
+  Bug,
+  Flame
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -169,7 +170,7 @@ const services = [
     description: "Prévention et maîtrise des nuisibles",
     details: [
       "Évaluation du risque nuisibles sur site",
-      "Mise en place d’un plan de lutte intégré (IPM)",
+      "Mise en place d'un plan de lutte intégré (IPM)",
       "Choix des appâts et pièges adaptés",
       "Traçabilité et enregistrement des actions",
       "Suivi réglementaire et mise en conformité"
@@ -178,6 +179,23 @@ const services = [
     format: "Service + Conseil",
     frequency: "2 à 3 passages par an",
     badge: "Hygiène & sécurité"
+  },
+  {
+    id: "formation-extincteur",
+    icon: Flame,
+    title: "Formation à l'Utilisation d'Extincteur",
+    description: "Formation pratique à la manipulation des extincteurs",
+    details: [
+      "Théorie sur les différents types d'extincteurs (eau, poudre, CO2)",
+      "Identification des classes de feux (A, B, C, D, F)",
+      "Manipulation pratique sur feux réels ou simulateurs",
+      "Techniques d'extinction et gestes de sécurité",
+      "Mise en situation et exercices pratiques",
+      "Conformité réglementaire (Code du travail)"
+    ],
+    duration: "2h à 3h",
+    format: "Présentiel & Sur site",
+    badge: "Sécurité incendie"
   }
 ];
 
