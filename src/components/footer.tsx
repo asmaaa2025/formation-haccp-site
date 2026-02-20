@@ -10,20 +10,9 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Branding */}
           <div className="space-y-4">
-            <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-2">
-                <Image src="/nouveau_logo.jpeg" alt="Logo BEKA Formation" width={80} height={80} />
-                <span className="text-lg font-bold whitespace-nowrap">Conseil & Formation</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <Image
-                  src="/logo_qualiopi.png"
-                  alt="Certification Qualiopi - République Française"
-                  width={140}
-                  height={80}
-                  className="h-auto w-auto"
-                />
-              </div>
+            <div className="flex items-center gap-3">
+              <Image src="/nouveau_logo.jpeg" alt="Logo BEKA Formation" width={70} height={70} />
+              <span className="text-lg font-bold whitespace-nowrap">Conseil & Formation</span>
             </div>
             <p className="text-sm text-muted-foreground">
               Expert en hygiène et sécurité alimentaire depuis 15 ans.
@@ -80,14 +69,37 @@ export function Footer() {
         <div className="bg-white rounded-lg p-6 mb-8 border border-gray-200">
           <div className="space-y-4">
             <h3 className="font-semibold text-lg text-gray-800">🏆 Certifications & Agréments</h3>
-            <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2">
-                <span className="font-medium text-blue-600">📋</span>
-                <span>N° d'enregistrement DRAAF : ROFHYA</span>
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div className="space-y-3 text-sm">
+                <div className="flex items-center gap-2">
+                  <span className="font-medium text-blue-600">📋</span>
+                  <span>N° d'enregistrement DRAAF : ROFHYA</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="font-medium text-purple-600">📅</span>
+                  <span>Formations conformes à l'Arrêté du 8 février 2024</span>
+                </div>
+                <div className="flex items-start gap-2 pt-2 border-t border-gray-200">
+                  <span className="font-medium text-green-600">✓</span>
+                  <div>
+                    <p className="font-semibold text-gray-800">Certification Qualiopi</p>
+                    <p className="text-xs text-gray-600">
+                      Organisme de formation <span className="font-semibold text-green-700">certifié Qualiopi</span> pour les actions de formation.
+                    </p>
+                    <p className="text-xs text-green-700 font-medium mt-1">Certification officielle République Française</p>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="font-medium text-purple-600">📅</span>
-                <span>Formations conformes à l'Arrêté du 8 février 2024</span>
+              <div className="flex items-center justify-center md:justify-end">
+                <div className="bg-white rounded-lg p-3 shadow-md border border-green-200">
+                  <Image
+                    src="/logo_qualiopi.png"
+                    alt="Certification Qualiopi - République Française"
+                    width={140}
+                    height={80}
+                    className="h-auto w-auto max-w-[140px] rounded-md"
+                  />
+                </div>
               </div>
             </div>
           </div>

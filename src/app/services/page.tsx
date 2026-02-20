@@ -288,7 +288,7 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-blue-200 text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-3xl">📋</span>
@@ -305,6 +305,21 @@ export default function ServicesPage() {
               <h3 className="text-xl font-bold text-purple-800 mb-3">Conformité 2024</h3>
               <p className="text-gray-600 mb-4">Formations conformes à l'Arrêté du 8 février 2024</p>
               <div className="text-sm text-purple-600 font-medium">✓ Réglementation à jour</div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-green-200 text-center">
+              <div className="flex justify-center mb-4">
+                <Image
+                  src="/logo_qualiopi.png"
+                  alt="Certification Qualiopi - République Française"
+                  width={120}
+                  height={70}
+                  className="h-auto w-auto max-w-[120px] rounded-md bg-white p-2"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-green-800 mb-3">Certification Qualiopi</h3>
+              <p className="text-gray-600 mb-4">Organisme de formation certifié Qualiopi pour les actions de formation</p>
+              <div className="text-sm text-green-600 font-medium">✓ Certification officielle République Française</div>
             </div>
           </div>
 

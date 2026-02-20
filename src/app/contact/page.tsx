@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 
 export default function ContactPage() {
   return (
@@ -107,6 +108,43 @@ export default function ContactPage() {
                       <span>Accompagnement personnalisé</span>
                     </li>
                   </ul>
+                </CardContent>
+              </Card>
+
+              {/* Certifications Officielles */}
+              <Card className="bg-gradient-to-br from-white to-gray-50 border-2 border-green-200">
+                <CardHeader>
+                  <CardTitle className="text-xl flex items-center gap-2">
+                    🏆 Certifications Officielles
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="flex flex-col items-center gap-4 p-4 bg-white rounded-lg border border-green-100">
+                    <Image
+                      src="/logo_qualiopi.png"
+                      alt="Certification Qualiopi - République Française"
+                      width={140}
+                      height={80}
+                      className="h-auto w-auto max-w-[140px] rounded-md bg-white p-2 shadow-sm"
+                    />
+                    <div className="text-center">
+                      <p className="font-semibold text-green-800 mb-2">Certification Qualiopi</p>
+                      <p className="text-xs text-gray-600">
+                        Organisme de formation <span className="font-semibold">certifié Qualiopi</span> pour les actions de formation
+                      </p>
+                      <p className="text-xs text-green-700 font-medium mt-2">✓ Certification officielle République Française</p>
+                    </div>
+                  </div>
+                  <div className="space-y-2 text-sm pt-2 border-t border-gray-200">
+                    <div className="flex items-center gap-2">
+                      <span className="font-medium text-blue-600">📋</span>
+                      <span>N° d'enregistrement DRAAF : ROFHYA</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="font-medium text-purple-600">📅</span>
+                      <span>Formations conformes à l'Arrêté du 8 février 2024</span>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             </div>
