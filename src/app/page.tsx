@@ -136,7 +136,7 @@ export default function HomePage() {
               {
                 icon: Microscope,
                 title: "🔬 Contrôle Microbiologique",
-                description: "Prélèvements de surface et analyses microbiologiques",
+                description: "Prélèvements de surface et analyses microbiologiques (partenaire AQCF)",
                 color: "text-red-500",
                 bgColor: "bg-red-50"
               },

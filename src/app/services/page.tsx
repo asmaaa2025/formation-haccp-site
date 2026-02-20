@@ -86,16 +86,17 @@ const services = [
     id: "controles-microbiologiques",
     icon: Microscope,
     title: "Contrôles Microbiologiques",
-    description: "Analyses des produits finis et surfaces",
+    description: "Analyses des produits finis et surfaces en partenariat avec le laboratoire AQCF",
     details: [
       "Prélèvements produits finis",
       "Analyses de surfaces",
       "Tests de contamination",
       "Rapports d'analyses certifiés",
-      "Interprétation des résultats"
+      "Interprétation des résultats",
+      "Partenariat avec le laboratoire agroalimentaire AQCF"
     ],
     duration: "Variable",
-    format: "Laboratoire agréé",
+    format: "Laboratoire agréé AQCF",
     frequency: "2 à 3 passages par an",
     badge: "Certification"
   },
@@ -239,7 +240,7 @@ export default function ServicesPage() {
             {services.map((service) => (
               <Card key={service.id} className="h-full hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
                       <div className="p-3 bg-primary/10 rounded-lg">
                         <service.icon className="h-6 w-6 text-primary" />
@@ -249,7 +250,7 @@ export default function ServicesPage() {
                         <p className="text-muted-foreground">{service.description}</p>
                       </div>
                     </div>
-                    <Badge variant="secondary" className="text-xs">
+                    <Badge variant="secondary" className="text-xs whitespace-nowrap flex items-center justify-center">
                       {service.badge}
                     </Badge>
                   </div>
@@ -556,6 +557,46 @@ export default function ServicesPage() {
               <div className="flex items-center gap-2">
                 <span className="text-2xl">🏪</span>
                 <span className="text-sm font-medium text-gray-700">Restauration, traiteurs, industries</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partenaires */}
+      <section className="py-20 bg-white">
+        <div className="container px-4 mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
+              <span className="text-primary font-semibold">🤝</span>
+              <span className="text-primary font-semibold text-sm">Nos Partenaires</span>
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              Partenaires de Confiance
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Nous travaillons avec des partenaires certifiés pour vous garantir des services de qualité
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {/* Partenaire AQCF */}
+            <div className="group relative">
+              <div className="flex flex-col items-center p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
+                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl transition-shadow">
+                  <Microscope className="h-12 w-12 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-2">AQCF</h3>
+                <p className="text-sm text-gray-600 text-center mb-4">
+                  Laboratoire Agroalimentaire
+                </p>
+                <div className="flex items-center gap-2 text-xs text-blue-700 font-semibold">
+                  <CheckCircle className="h-4 w-4" />
+                  <span>Partenaire Contrôles Microbiologiques</span>
+                </div>
+                <p className="text-xs text-gray-500 mt-4 text-center">
+                  Analyses certifiées et rapports détaillés
+                </p>
               </div>
             </div>
           </div>
