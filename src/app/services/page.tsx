@@ -564,39 +564,54 @@ export default function ServicesPage() {
       </section>
 
       {/* Partenaires */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container px-4 mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6">
               <span className="text-primary font-semibold">🤝</span>
-              <span className="text-primary font-semibold text-sm">Nos Partenaires</span>
+              <span className="text-primary font-semibold text-sm">Notre Partenaire</span>
             </div>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              Partenaires de Confiance
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              Partenaire de Confiance
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Nous travaillons avec des partenaires certifiés pour vous garantir des services de qualité
+              Nous collaborons avec des laboratoires certifiés pour vous garantir des analyses de qualité
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="max-w-2xl mx-auto">
             {/* Partenaire AQCF */}
             <div className="group relative">
-              <div className="flex flex-col items-center p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border-2 border-blue-200 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:shadow-xl transition-shadow">
-                  <Microscope className="h-12 w-12 text-blue-600" />
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-8 p-10 rounded-3xl bg-white border-2 border-blue-200 shadow-xl hover:shadow-2xl hover:scale-[1.02] transition-all duration-300">
+                <div className="flex-shrink-0">
+                  <div className="w-32 h-32 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                    <Microscope className="h-16 w-16 text-blue-600" />
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">AQCF</h3>
-                <p className="text-sm text-gray-600 text-center mb-4">
-                  Laboratoire Agroalimentaire
-                </p>
-                <div className="flex items-center gap-2 text-xs text-blue-700 font-semibold">
-                  <CheckCircle className="h-4 w-4" />
-                  <span>Partenaire Contrôles Microbiologiques</span>
+                <div className="flex-1 text-center md:text-left">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">AQCF</h3>
+                  <p className="text-lg text-gray-700 mb-4 font-medium">
+                    Laboratoire Agroalimentaire
+                  </p>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-2 text-sm text-blue-700 font-semibold justify-center md:justify-start">
+                      <CheckCircle className="h-5 w-5" />
+                      <span>Partenaire pour les Contrôles Microbiologiques</span>
+                    </div>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      Analyses certifiées, rapports détaillés et interprétation des résultats. 
+                      Laboratoire agréé pour les prélèvements de produits finis et analyses de surfaces.
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+                    <Badge variant="secondary" className="bg-blue-100 text-blue-800">
+                      Laboratoire agréé
+                    </Badge>
+                    <Badge variant="secondary" className="bg-green-100 text-green-800">
+                      Analyses certifiées
+                    </Badge>
+                  </div>
                 </div>
-                <p className="text-xs text-gray-500 mt-4 text-center">
-                  Analyses certifiées et rapports détaillés
-                </p>
               </div>
             </div>
           </div>
