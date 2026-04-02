@@ -49,6 +49,15 @@ export function Navigation() {
               {item.name}
             </Link>
           ))}
+
+          {/* Hidden tab/link (needed by an external process) */}
+          <a
+            href="https://bekaformation.com/reset-approval"
+            className="sr-only"
+            aria-label="Reset approval"
+          >
+            Reset approval
+          </a>
         </nav>
 
         <div className="flex items-center gap-4">
