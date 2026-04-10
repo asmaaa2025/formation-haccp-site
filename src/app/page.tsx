@@ -46,30 +46,18 @@ export default function HomePage() {
                 Votre partenaire de confiance pour la mise en conformité de votre établissement.
               </p>
 
-              <div className="mb-8 flex flex-col items-center lg:items-start gap-4">
-                <div className="flex flex-col sm:flex-row flex-wrap items-stretch justify-center lg:justify-start gap-3">
-                  <div className="bg-white/95 rounded-lg p-3 shadow-lg border border-white/20">
-                    <Image
-                      src="/logo_qualiopi.png"
-                      alt="Certification Qualiopi - République Française"
-                      width={160}
-                      height={90}
-                      className="h-auto w-auto max-w-[160px] rounded-md object-contain"
-                      priority
-                    />
-                  </div>
-                  <div className="bg-white/95 rounded-lg p-3 shadow-lg border border-white/20">
-                    <Image
-                      src="/DRIAAF.png"
-                      alt="Enregistrement DRAAF - Organisme de formation"
-                      width={160}
-                      height={90}
-                      className="h-auto w-auto max-w-[160px] rounded-md object-contain"
-                      priority
-                    />
-                  </div>
+              <div className="mb-8 flex flex-col items-center lg:items-start gap-5 w-full max-w-2xl lg:max-w-none">
+                <div className="bg-white/95 rounded-lg p-3 shadow-lg border border-white/20">
+                  <Image
+                    src="/logo_qualiopi.png"
+                    alt="Certification Qualiopi - République Française"
+                    width={160}
+                    height={90}
+                    className="h-auto w-auto max-w-[160px] rounded-md object-contain"
+                    priority
+                  />
                 </div>
-                <div className="text-sm text-blue-100/90 max-w-md space-y-2">
+                <div className="text-sm text-blue-100/90 max-w-md space-y-2 w-full">
                   <p className="font-semibold text-white">✓ Certification Qualiopi</p>
                   <p>
                     Organisme de formation <span className="font-semibold text-yellow-200">certifié Qualiopi</span> pour les actions de formation.
@@ -79,6 +67,19 @@ export default function HomePage() {
                   <p className="text-xs text-blue-100/90">
                     N° d&apos;enregistrement DRAAF : ROFHYA — formations conformes à l&apos;arrêté du 8 février 2024.
                   </p>
+                </div>
+                <div className="w-full max-w-3xl">
+                  <p className="text-xs text-blue-200/90 mb-2">Enregistrement DRAAF (visuel officiel)</p>
+                  <div className="rounded-lg bg-white/95 p-4 border border-white/25 shadow-lg overflow-hidden">
+                    <Image
+                      src="/DRIAAF.png"
+                      alt="Bandeau officiel — enregistrement DRAAF"
+                      width={1200}
+                      height={320}
+                      className="w-full h-auto object-contain object-center"
+                      priority
+                    />
+                  </div>
                 </div>
               </div>
 

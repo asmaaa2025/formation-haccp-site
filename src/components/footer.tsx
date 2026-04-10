@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { Mail, Phone } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import Image from "next/image"
 
@@ -70,8 +70,8 @@ export function Footer() {
         <div className="bg-white rounded-lg p-6 mb-8 border border-gray-200">
           <div className="space-y-4">
             <h3 className="font-semibold text-lg text-gray-800">🏆 Certifications & Agréments</h3>
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-              <div className="space-y-3 text-sm">
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+              <div className="space-y-3 text-sm flex-1 min-w-0">
                 <div className="flex items-center gap-2">
                   <span className="font-medium text-blue-600">📋</span>
                   <span>N° d'enregistrement DRAAF : ROFHYA</span>
@@ -91,7 +91,7 @@ export function Footer() {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-3">
+              <div className="flex shrink-0 justify-center md:justify-end">
                 <div className="bg-white rounded-lg p-3 shadow-md border border-green-200">
                   <Image
                     src="/logo_qualiopi.png"
@@ -101,15 +101,20 @@ export function Footer() {
                     className="h-auto w-auto max-w-[140px] rounded-md"
                   />
                 </div>
-                <div className="bg-slate-50 rounded-lg p-3 shadow-md border border-blue-200">
-                  <Image
-                    src="/DRIAAF.png"
-                    alt="Enregistrement DRAAF - Certification officielle"
-                    width={140}
-                    height={80}
-                    className="h-auto w-auto max-w-[140px] rounded-md object-contain"
-                  />
-                </div>
+              </div>
+            </div>
+            <div className="pt-6 border-t border-gray-200">
+              <p className="text-xs text-muted-foreground mb-3 text-center md:text-left">
+                Enregistrement DRAAF (visuel officiel)
+              </p>
+              <div className="rounded-lg bg-slate-50 p-4 sm:p-5 border border-blue-100 overflow-hidden">
+                <Image
+                  src="/DRIAAF.png"
+                  alt="Bandeau officiel — enregistrement DRAAF"
+                  width={1200}
+                  height={320}
+                  className="w-full h-auto object-contain object-center"
+                />
               </div>
             </div>
           </div>
