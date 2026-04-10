@@ -77,6 +77,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className="bg-white text-black">
       <head>
+        <link rel="preload" href="/DRIAAF.png" as="image" />
         <Script
           crossOrigin="anonymous"
           src="//unpkg.com/same-runtime/dist/index.global.js"

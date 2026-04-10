@@ -101,13 +101,13 @@ export function Footer() {
                     className="h-auto w-auto max-w-[140px] rounded-md"
                   />
                 </div>
-                <div className="bg-white rounded-lg p-3 shadow-md border border-blue-200">
+                <div className="bg-slate-50 rounded-lg p-3 shadow-md border border-blue-200">
                   <Image
                     src="/DRIAAF.png"
                     alt="Enregistrement DRAAF - Certification officielle"
                     width={140}
                     height={80}
-                    className="h-auto w-auto max-w-[140px] rounded-md"
+                    className="h-auto w-auto max-w-[140px] rounded-md object-contain"
                   />
                 </div>
               </div>
