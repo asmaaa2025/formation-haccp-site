@@ -46,7 +46,7 @@ export default function HomePage() {
                 Votre partenaire de confiance pour la mise en conformité de votre établissement.
               </p>
 
-              <div className="mb-8 flex flex-col items-center lg:items-start gap-5 w-full max-w-2xl lg:max-w-none">
+              <div className="mb-8 flex flex-col items-center lg:items-start gap-5 w-full min-w-0">
                 <div className="bg-white/95 rounded-lg p-3 shadow-lg border border-white/20">
                   <Image
                     src="/logo_qualiopi.png"
@@ -68,15 +68,17 @@ export default function HomePage() {
                     N° d&apos;enregistrement DRAAF : ROFHYA — formations conformes à l&apos;arrêté du 8 février 2024.
                   </p>
                 </div>
-                <div className="w-full max-w-3xl">
+                <div className="w-full min-w-0 self-stretch">
                   <p className="text-xs text-blue-200/90 mb-2">Enregistrement DRAAF (visuel officiel)</p>
-                  <div className="rounded-lg bg-white/95 p-4 border border-white/25 shadow-lg overflow-hidden">
+                  {/* Fichier source : 774×117 px — bande pleine largeur de la colonne */}
+                  <div className="rounded-lg bg-white/95 px-2 py-3 sm:px-4 border border-white/25 shadow-lg">
                     <Image
                       src="/DRIAAF.png"
                       alt="Bandeau officiel — enregistrement DRAAF"
-                      width={1200}
-                      height={320}
-                      className="w-full h-auto object-contain object-center"
+                      width={774}
+                      height={117}
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="block w-full h-auto max-w-none object-contain object-left"
                       priority
                     />
                   </div>

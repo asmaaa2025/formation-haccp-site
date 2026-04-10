@@ -103,17 +103,19 @@ export function Footer() {
                 </div>
               </div>
             </div>
-            <div className="pt-6 border-t border-gray-200">
+            <div className="pt-6 border-t border-gray-200 w-full min-w-0">
               <p className="text-xs text-muted-foreground mb-3 text-center md:text-left">
                 Enregistrement DRAAF (visuel officiel)
               </p>
-              <div className="rounded-lg bg-slate-50 p-4 sm:p-5 border border-blue-100 overflow-hidden">
+              {/* Fichier source : 774×117 px (bandeau paysage) — pleine largeur du bloc */}
+              <div className="rounded-lg bg-slate-50 px-2 py-3 sm:px-4 sm:py-4 border border-blue-100">
                 <Image
                   src="/DRIAAF.png"
                   alt="Bandeau officiel — enregistrement DRAAF"
-                  width={1200}
-                  height={320}
-                  className="w-full h-auto object-contain object-center"
+                  width={774}
+                  height={117}
+                  sizes="(max-width: 768px) 100vw, min(1200px, 100vw - 2rem)"
+                  className="block w-full h-auto max-w-none object-contain object-left"
                 />
               </div>
             </div>
