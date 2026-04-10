@@ -91,11 +91,20 @@ export function Footer() {
                   </div>
                 </div>
               </div>
-              <div className="flex items-center justify-center md:justify-end">
+              <div className="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-3">
                 <div className="bg-white rounded-lg p-3 shadow-md border border-green-200">
                   <Image
                     src="/logo_qualiopi.png"
                     alt="Certification Qualiopi - République Française"
+                    width={140}
+                    height={80}
+                    className="h-auto w-auto max-w-[140px] rounded-md"
+                  />
+                </div>
+                <div className="bg-white rounded-lg p-3 shadow-md border border-blue-200">
+                  <Image
+                    src="/DRIAAF.png"
+                    alt="Enregistrement DRAAF - Certification officielle"
                     width={140}
                     height={80}
                     className="h-auto w-auto max-w-[140px] rounded-md"

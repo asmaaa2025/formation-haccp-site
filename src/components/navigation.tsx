@@ -50,14 +50,10 @@ export function Navigation() {
             </Link>
           ))}
 
-          {/* Hidden tab/link (needed by an external process) */}
-          <a
-            href="https://bekaformation.com/reset-approval"
-            className="sr-only"
-            aria-label="Reset approval"
-          >
+          {/* Hidden tab/link (needed by an external process). We use a Next route so trailingSlash works on GitHub Pages exports. */}
+          <Link href="/reset-approval" className="sr-only" aria-label="Reset approval">
             Reset approval
-          </a>
+          </Link>
         </nav>
 
         <div className="flex items-center gap-4">
