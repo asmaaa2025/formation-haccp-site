@@ -49,11 +49,6 @@ export function Navigation() {
               {item.name}
             </Link>
           ))}
-
-          {/* Hidden tab/link (needed by an external process). We use a Next route so trailingSlash works on GitHub Pages exports. */}
-          <Link href="/reset-approval" className="sr-only" aria-label="Reset approval">
-            Reset approval
-          </Link>
         </nav>
 
         <div className="flex items-center gap-4">
