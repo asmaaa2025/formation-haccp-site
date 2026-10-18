@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "BEKA Formation HACCP - Expert en Hygiène et Sécurité Alimentaire",
     description: "Formations HACCP, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans. Devis gratuit.",
-    url: "https://bekaformation.fr",
+    url: "https://bekaformation.com",
     type: "website",
   },
 };

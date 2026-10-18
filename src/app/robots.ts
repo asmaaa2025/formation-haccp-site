@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/_next/', '/admin/'],
     },
-    sitemap: 'https://bekaformation.fr/sitemap.xml',
+    sitemap: 'https://bekaformation.com/sitemap.xml',
   }
 } 

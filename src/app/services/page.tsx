@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Services HACCP - Formations, Audits, Contrôles Microbiologiques",
     description: "Formations HACCP, audits de conformité, contrôles microbiologiques, PMS, agrément sanitaire, lutte anti-nuisibles. Expert en hygiène alimentaire.",
-    url: "https://bekaformation.fr/services",
+    url: "https://bekaformation.com/services",
     type: "website",
   },
 };

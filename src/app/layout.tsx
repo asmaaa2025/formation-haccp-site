@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://bekaformation.fr'),
+  metadataBase: new URL('https://bekaformation.com'),
   alternates: {
     canonical: '/',
   },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://bekaformation.fr',
+    url: 'https://bekaformation.com',
     siteName: 'BEKA Formation HACCP',
     title: 'BEKA Formation HACCP - Expert en Hygiène et Sécurité Alimentaire',
     description: 'Formations HACCP, audits de conformité, contrôles microbiologiques. Expert en hygiène alimentaire depuis 15 ans. Devis gratuit.',
@@ -90,8 +90,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "BEKA Formation HACCP",
-              "url": "https://bekaformation.fr",
-              "logo": "https://bekaformation.fr/nouveau_logo.jpeg",
+              "url": "https://bekaformation.com",
+              "logo": "https://bekaformation.com/nouveau_logo.jpeg",
               "description": "Expert en hygiène et sécurité alimentaire depuis 15 ans. Formations HACCP, audits de conformité, contrôles microbiologiques.",
               "address": {
                 "@type": "PostalAddress",
